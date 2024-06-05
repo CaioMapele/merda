@@ -1,18 +1,15 @@
 document.getElementById('notaForm').addEventListener('submit', function(event) {
     event.preventDefault();
     
-    // Captura os dados do formulário
     let nome = document.getElementById('nome').value;
     let matricula = document.getElementById('matricula').value;
     let nota1 = parseFloat(document.getElementById('nota1').value);
     let nota2 = parseFloat(document.getElementById('nota2').value);
     
-    // Calcula a média
     let media = (nota1 + nota2) / 2;
     let status = media >= 7 ? 'Aprovado' : 'Reprovado';
     let statusClass = media >= 7 ? 'approved' : 'failed';
     
-    // Adiciona uma nova linha na tabela
     let tabela = document.getElementById('tabelaNotas').getElementsByTagName('tbody')[0];
     let newRow = tabela.insertRow();
 
@@ -30,7 +27,6 @@ document.getElementById('notaForm').addEventListener('submit', function(event) {
     cell5.innerHTML = media.toFixed(1);
     cell6.innerHTML = status;
 
-    // Aplica a classe de estilo para aprovação/reprovação
     newRow.classList.add(statusClass);
     
     // Limpa o formulário
