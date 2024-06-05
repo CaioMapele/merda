@@ -29,6 +29,5 @@ document.getElementById('notaForm').addEventListener('submit', function(event) {
 
     newRow.classList.add(statusClass);
     
-    // Limpa o formulário
     document.getElementById('notaForm').reset();
 });
